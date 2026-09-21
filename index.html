@@ -27,7 +27,7 @@
   --glass-border:rgba(212,175,55,0.35);
 }
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;overflow-x:hidden;overflow-y:auto}
 body{
   font-family:'Poppins',sans-serif;
   color:#fff;
@@ -64,7 +64,15 @@ h1,h2,h3,.serif{font-family:'Cinzel',serif}
 .beam3{left:90%;animation-delay:-11s;animation-duration:22s}
 @keyframes beamMove{0%{transform:rotate(18deg) translateX(-20vw)}50%{transform:rotate(18deg) translateX(20vw)}100%{transform:rotate(18deg) translateX(-20vw)}}
 
+/* ============ SCROLL FIX ============ */
+html, body{width:100%;min-height:100%;overflow-x:hidden}
+body.menu-open{overflow:hidden}
+.bg-scene,.light-beam,#particles{pointer-events:none}
+.mobile-menu{-webkit-overflow-scrolling:touch;touch-action:pan-y}
+section,header,footer{scroll-margin-top:82px}
+
 /* ============ NAVBAR ============ */
+
 .navbar{
   position:fixed;top:0;left:0;right:0;z-index:100;
   display:flex;align-items:center;justify-content:space-between;
@@ -104,6 +112,7 @@ h1,h2,h3,.serif{font-family:'Cinzel',serif}
   position:fixed;inset:0;z-index:101;
   background:rgba(35,5,8,0.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
   display:flex;flex-direction:column;align-items:center;justify-content:center;gap:34px;
+  overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;
   opacity:0;pointer-events:none;transition:opacity .4s ease;
 }
 .mobile-menu.open{opacity:1;pointer-events:auto}
@@ -270,6 +279,7 @@ section{padding:96px 6vw;position:relative}
   cursor:pointer;
 }
 .flip-card.flipped{transform:rotateY(180deg) scale(1.04)}
+.flip-card{touch-action:manipulation}
 .flip-face{
   position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;
   border-radius:24px;overflow:hidden;
@@ -646,12 +656,12 @@ const mobileMenu = document.getElementById('mobileMenu');
 hamburger.addEventListener('click', () => {
   const open = mobileMenu.classList.toggle('open');
   hamburger.classList.toggle('open', open);
-  document.body.style.overflow = open ? 'hidden' : '';
+  document.body.classList.toggle('menu-open', open);
 });
 mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
   mobileMenu.classList.remove('open');
   hamburger.classList.remove('open');
-  document.body.style.overflow = '';
+  document.body.classList.remove('menu-open');
 }));
 
 /* ---------- Scroll reveal ---------- */
