@@ -231,7 +231,37 @@ section{padding:96px 6vw;position:relative}
 .reveal.in{opacity:1;transform:none}
 .reveal.d1{transition-delay:.12s}.reveal.d2{transition-delay:.24s}.reveal.d3{transition-delay:.36s}.reveal.d4{transition-delay:.48s}
 
+/* ============ T-SHIRT COLOUR SELECTOR ============ */
+.color-selector{
+  display:flex;justify-content:center;gap:10px;
+  background:var(--glass);border:1px solid var(--glass-border);
+  border-radius:999px;padding:7px;width:max-content;margin:0 auto 22px;
+  backdrop-filter:blur(12px);
+}
+.color-option{
+  border:1px solid transparent;background:transparent;color:#f6e9c9;
+  font-family:'Poppins',sans-serif;font-weight:700;font-size:.82rem;
+  letter-spacing:.8px;padding:11px 20px;border-radius:999px;
+  cursor:pointer;transition:.35s;display:flex;align-items:center;gap:9px;
+}
+.color-option:hover{border-color:var(--glass-border);transform:translateY(-2px)}
+.color-option.active{
+  background:var(--gold-metallic);color:var(--maroon-deep);
+  box-shadow:0 0 22px rgba(212,175,55,.45);
+}
+.color-dot{
+  width:14px;height:14px;border-radius:50%;display:inline-block;
+  border:1px solid rgba(255,255,255,.55);box-shadow:0 0 8px rgba(255,255,255,.15);
+}
+.white-dot{background:#fff}
+.black-dot{background:#090909}
+@media(max-width:680px){
+  .color-selector{width:100%;max-width:360px}
+  .color-option{flex:1;justify-content:center;padding:11px 10px;font-size:.72rem}
+}
+
 /* ============ PRODUCT / FLIP ============ */
+
 .product-wrap{display:grid;grid-template-columns:1.1fr 1fr;gap:60px;align-items:center;max-width:1180px;margin:0 auto}
 .flip-stage{perspective:1600px;display:flex;justify-content:center}
 .flip-card{
@@ -395,7 +425,7 @@ footer .fine{margin-top:26px;font-size:.75rem;color:rgba(255,255,255,0.35);lette
 <!-- NAVBAR -->
 <nav class="navbar" id="navbar">
   <a href="#home" class="brand">
-    <img src="front.png" alt="M.K.V School Crest">
+    <img src="white-front.png" alt="M.K.V School Crest">
     <span class="brand-name">M.K.V. T-SHIRT</span>
   </a>
   <ul class="nav-links">
@@ -433,7 +463,7 @@ footer .fine{margin-top:26px;font-size:.75rem;color:rgba(255,255,255,0.35);lette
   <div class="hero-visual reveal d2">
     <div class="glow-circle"></div>
     <div class="glow-ring"></div>
-    <img src="front.png" alt="M.K.V Official School T-Shirt – Front View" class="hero-shirt" id="heroShirt">
+    <img src="white-front.png" alt="M.K.V Official School T-Shirt – Front View" class="hero-shirt" id="heroShirt">
     <div class="hero-badge">✦ 2026 OFFICIAL DESIGN ✦</div>
   </div>
   <div class="scroll-hint"><span>Scroll</span><div class="line"></div></div>
@@ -444,7 +474,16 @@ footer .fine{margin-top:26px;font-size:.75rem;color:rgba(255,255,255,0.35);lette
   <div class="section-head reveal">
     <span class="tag">The Product</span>
     <h2>Official M.K.V T-Shirt</h2>
-    <p>Premium white school T-shirt with maroon &amp; golden sleeve stripes, school crest on the chest, and the school name printed on the back.</p>
+    <p>Choose your preferred school T-shirt colour — White or Black — with the same maroon &amp; golden signature details.</p>
+  </div>
+
+  <div class="color-selector reveal" role="tablist" aria-label="T-shirt colour selector">
+    <button class="color-option active" id="whiteOption" role="tab" aria-selected="true">
+      <span class="color-dot white-dot"></span> WHITE T-SHIRT
+    </button>
+    <button class="color-option" id="blackOption" role="tab" aria-selected="false">
+      <span class="color-dot black-dot"></span> BLACK T-SHIRT
+    </button>
   </div>
 
   <div class="toggle-pill reveal" role="tablist" aria-label="T-shirt view selector">
@@ -456,11 +495,11 @@ footer .fine{margin-top:26px;font-size:.75rem;color:rgba(255,255,255,0.35);lette
     <div class="flip-stage reveal">
       <div class="flip-card" id="flipCard" tabindex="0" aria-label="T-shirt front and back preview. Click to flip.">
         <div class="flip-face front">
-          <img src="front.png" alt="Front view – M.K.V school T-shirt with crest and sleeve stripes">
+          <img src="white-front.png" alt="Front view – M.K.V school T-shirt with crest and sleeve stripes">
           <span class="flip-hint">TAP TO FLIP ⟳</span>
         </div>
         <div class="flip-face back">
-          <img src="back.png" alt="Back view – KG/DEHI/MUDUGAMUWA K.V Ruwanwalla printed T-shirt">
+          <img src="white-back.png" alt="Back view – KG/DEHI/MUDUGAMUWA K.V Ruwanwalla printed T-shirt">
           <span class="flip-hint">TAP TO FLIP ⟳</span>
         </div>
       </div>
@@ -470,7 +509,7 @@ footer .fine{margin-top:26px;font-size:.75rem;color:rgba(255,255,255,0.35);lette
       <h3>M.K.V Official School Tee</h3>
       <div class="price">Order Online Today</div>
       <ul class="spec-list">
-        <li>Premium white breathable fabric</li>
+        <li>Premium breathable fabric</li>
         <li>Signature maroon + golden sleeve stripes</li>
         <li>Embroidered-look school crest on chest with “M.K.V”</li>
         <li>Back print: “KG/DEHI/MUDUGAMUWA .K.V – Ruwanwalla”</li>
@@ -478,11 +517,11 @@ footer .fine{margin-top:26px;font-size:.75rem;color:rgba(255,255,255,0.35);lette
       </ul>
       <div class="mini-views">
         <figure id="miniFront" class="active">
-          <img src="front.png" alt="Front view thumbnail">
+          <img src="white-front.png" alt="Front view thumbnail">
           <figcaption>FRONT</figcaption>
         </figure>
         <figure id="miniBack">
-          <img src="back.png" alt="Back view thumbnail">
+          <img src="white-back.png" alt="Back view thumbnail">
           <figcaption>BACK</figcaption>
         </figure>
       </div>
@@ -587,7 +626,7 @@ footer .fine{margin-top:26px;font-size:.75rem;color:rgba(255,255,255,0.35);lette
 
 <!-- FOOTER -->
 <footer id="contact">
-  <img src="front.png" alt="M.K.V crest">
+  <img src="white-front.png" alt="M.K.V crest">
   <h3 class="serif">KG/DEHI/MUDUGAMUWA K.V. – Ruwanwalla</h3>
   <p>Official School T-Shirt Ordering Portal</p>
   <p>Questions about your order? Contact your class teacher or the school office.</p>
@@ -634,7 +673,47 @@ if (fine && heroShirt) {
   heroShirt.parentElement.addEventListener('mouseleave', () => heroShirt.style.transform = '');
 }
 
+/* ---------- T-shirt colour selector ---------- */
+const whiteOption = document.getElementById('whiteOption');
+const blackOption = document.getElementById('blackOption');
+const productImages = {
+  white: {front:'white-front.png', back:'white-back.png'},
+  black: {front:'black-front.png', back:'black-back.png'}
+};
+let selectedColor = 'white';
+
+function setColor(color) {
+  selectedColor = color;
+  const isBlack = color === 'black';
+  whiteOption.classList.toggle('active', !isBlack);
+  blackOption.classList.toggle('active', isBlack);
+  whiteOption.setAttribute('aria-selected', String(!isBlack));
+  blackOption.setAttribute('aria-selected', String(isBlack));
+
+  const frontSrc = productImages[color].front;
+  const backSrc = productImages[color].back;
+
+  document.querySelectorAll('img[alt*="Front view"], img[alt*="Front View"]').forEach(img => {
+    if (img.closest('.mini-views') || img.closest('.flip-face')) img.src = frontSrc;
+  });
+  document.querySelectorAll('img[alt*="Back view"], img[alt*="Back View"]').forEach(img => {
+    if (img.closest('.mini-views') || img.closest('.flip-face')) img.src = backSrc;
+  });
+
+  // Hero image
+  const hero = document.getElementById('heroShirt');
+  if (hero) hero.src = frontSrc;
+
+  // Footer/brand image remains the school crest-style product image area.
+  const productTitle = document.querySelector('.product-info h3');
+  if (productTitle) productTitle.textContent = `M.K.V ${isBlack ? 'Black' : 'White'} School Tee`;
+}
+
+whiteOption.addEventListener('click', () => setColor('white'));
+blackOption.addEventListener('click', () => setColor('black'));
+
 /* ---------- Front / Back flip toggle ---------- */
+
 const flipCard = document.getElementById('flipCard');
 const btnFront = document.getElementById('btnFront');
 const btnBack  = document.getElementById('btnBack');
