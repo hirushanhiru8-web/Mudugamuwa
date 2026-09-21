@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MUDUGAMUWA K.V. School T-Shirt | Official Ordering Portal – Ruwanwalla</title>
+<meta name="description" content="Official school T-shirt ordering portal for KG/DEHI/MUDUGAMUWA K.V. – Ruwanwalla. Order the official M.K.V school T-shirt online.">
+<meta property="og:title" content="MUDUGAMUWA K.V. School T-Shirt Ordering Portal">
+<meta property="og:description" content="Order the official M.K.V school T-shirt. KG/DEHI/MUDUGAMUWA K.V. – Ruwanwalla.">
+<meta property="og:image" content="front.png">
+<link rel="icon" href="front.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --maroon-deep:#3d0a0e;
+  --maroon:#6b0f1a;
+  --maroon-light:#8e1b28;
+  --gold:#d4af37;
+  --gold-light:#f3d27a;
+  --gold-metallic:linear-gradient(135deg,#b8860b 0%,#f3d27a 30%,#d4af37 55%,#fff3c4 75%,#b8860b 100%);
+  --yellow:#ffd60a;
+  --white:#ffffff;
+  --ink:#2a0a0d;
+  --glass:rgba(255,255,255,0.06);
+  --glass-border:rgba(212,175,55,0.35);
+}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Poppins',sans-serif;
+  color:#fff;
+  background:var(--maroon-deep);
+  overflow-x:hidden;
+  line-height:1.6;
+}
+::selection{background:var(--gold);color:var(--maroon-deep)}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+h1,h2,h3,.serif{font-family:'Cinzel',serif}
+
+/* ============ ANIMATED BACKGROUND ============ */
+.bg-scene{
+  position:fixed;inset:0;z-index:-3;
+  background:
+    radial-gradient(ellipse 80% 60% at 70% 10%, rgba(212,175,55,0.14), transparent 60%),
+    radial-gradient(ellipse 70% 60% at 15% 90%, rgba(142,27,40,0.55), transparent 60%),
+    linear-gradient(160deg,#2b0609 0%,#4a0b12 40%,#3d0a0e 70%,#240507 100%);
+  background-size:200% 200%;
+  animation:bgShift 18s ease-in-out infinite;
+}
+@keyframes bgShift{0%,100%{background-position:0% 0%}50%{background-position:100% 100%}}
+#particles{position:fixed;inset:0;z-index:-2;pointer-events:none}
+.light-beam{
+  position:fixed;top:-30%;height:170%;width:140px;z-index:-1;pointer-events:none;
+  background:linear-gradient(to bottom,transparent,rgba(212,175,55,0.10) 30%,rgba(255,214,10,0.14) 50%,rgba(212,175,55,0.10) 70%,transparent);
+  filter:blur(14px);
+  transform:rotate(18deg);
+  animation:beamMove 14s linear infinite;
+}
+.beam1{left:-10%}
+.beam2{left:45%;animation-delay:-6s;animation-duration:18s}
+.beam3{left:90%;animation-delay:-11s;animation-duration:22s}
+@keyframes beamMove{0%{transform:rotate(18deg) translateX(-20vw)}50%{transform:rotate(18deg) translateX(20vw)}100%{transform:rotate(18deg) translateX(-20vw)}}
+
+/* ============ NAVBAR ============ */
+.navbar{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:16px 5vw;
+  transition:background .4s ease,padding .4s ease,box-shadow .4s ease,border-color .4s ease;
+  border-bottom:1px solid transparent;
+}
+.navbar.scrolled{
+  background:rgba(46,7,10,0.72);
+  backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
+  padding:10px 5vw;
+  border-bottom:1px solid var(--glass-border);
+  box-shadow:0 8px 32px rgba(0,0,0,0.45),0 0 24px rgba(212,175,55,0.12) inset;
+}
+.brand{display:flex;align-items:center;gap:12px}
+.brand img{width:44px;height:44px;border-radius:50%;object-fit:cover;border:2px solid var(--gold);box-shadow:0 0 14px rgba(212,175,55,0.55)}
+.brand-name{font-family:'Cinzel',serif;font-weight:700;font-size:1.05rem;letter-spacing:1px;background:var(--gold-metallic);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.nav-links{display:flex;align-items:center;gap:34px;list-style:none}
+.nav-links a{font-size:.92rem;font-weight:500;letter-spacing:.5px;color:#f6e9c9;position:relative;padding:4px 0;transition:color .3s}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:2px;background:var(--gold-metallic);transition:width .35s ease;box-shadow:0 0 8px var(--gold)}
+.nav-links a:hover{color:var(--yellow)}
+.nav-links a:hover::after{width:100%}
+.nav-cta{
+  font-size:.85rem !important;font-weight:600 !important;color:var(--maroon-deep) !important;
+  background:var(--gold-metallic);padding:9px 22px !important;border-radius:999px;
+  box-shadow:0 0 18px rgba(212,175,55,0.5);transition:transform .3s,box-shadow .3s !important;
+}
+.nav-cta:hover{transform:scale(1.06);box-shadow:0 0 30px rgba(255,214,10,0.75)}
+.nav-cta::after{display:none}
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;z-index:102}
+.hamburger span{width:26px;height:2.5px;background:var(--gold);border-radius:2px;transition:.35s;box-shadow:0 0 6px rgba(212,175,55,0.7)}
+.hamburger.open span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+.mobile-menu{
+  position:fixed;inset:0;z-index:101;
+  background:rgba(35,5,8,0.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:34px;
+  opacity:0;pointer-events:none;transition:opacity .4s ease;
+}
+.mobile-menu.open{opacity:1;pointer-events:auto}
+.mobile-menu a{font-family:'Cinzel',serif;font-size:1.5rem;color:#f6e9c9;letter-spacing:2px;transform:translateY(16px);opacity:0;transition:.5s ease}
+.mobile-menu.open a{transform:translateY(0);opacity:1}
+.mobile-menu a:nth-child(2){transition-delay:.08s}.mobile-menu a:nth-child(3){transition-delay:.16s}
+.mobile-menu a:nth-child(4){transition-delay:.24s}.mobile-menu a:nth-child(5){transition-delay:.32s}
+
+/* ============ BUTTONS ============ */
+.btn{
+  position:relative;display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  padding:16px 42px;border-radius:999px;font-weight:700;font-size:1rem;letter-spacing:1px;
+  cursor:pointer;border:none;overflow:hidden;
+  transition:transform .3s cubic-bezier(.34,1.56,.64,1),box-shadow .3s;
+}
+.btn-gold{
+  background:var(--gold-metallic);color:var(--maroon-deep);
+  box-shadow:0 0 24px rgba(212,175,55,0.55),0 8px 24px rgba(0,0,0,0.35);
+  animation:pulseGlow 2.6s ease-in-out infinite;
+}
+@keyframes pulseGlow{
+  0%,100%{box-shadow:0 0 24px rgba(212,175,55,0.55),0 8px 24px rgba(0,0,0,0.35)}
+  50%{box-shadow:0 0 46px rgba(255,214,10,0.85),0 8px 24px rgba(0,0,0,0.35)}
+}
+.btn-gold:hover{transform:scale(1.07)}
+.btn-gold::after{
+  content:"";position:absolute;top:0;left:-80%;width:50%;height:100%;
+  background:linear-gradient(100deg,transparent,rgba(255,255,255,0.65),transparent);
+  transform:skewX(-20deg);animation:shimmer 3.2s ease-in-out infinite;
+}
+@keyframes shimmer{0%,60%{left:-80%}100%{left:140%}}
+.btn-ghost{
+  background:rgba(255,255,255,0.05);color:#f6e9c9;
+  border:1.5px solid var(--glass-border);backdrop-filter:blur(8px);
+}
+.btn-ghost:hover{transform:scale(1.05);border-color:var(--gold);box-shadow:0 0 22px rgba(212,175,55,0.4);color:var(--yellow)}
+.ripple{
+  position:absolute;border-radius:50%;background:rgba(255,255,255,0.5);
+  transform:scale(0);animation:ripple .6s ease-out forwards;pointer-events:none;
+}
+@keyframes ripple{to{transform:scale(4);opacity:0}}
+
+/* ============ HERO ============ */
+.hero{
+  min-height:100vh;display:grid;grid-template-columns:1.05fr 1fr;align-items:center;
+  gap:40px;padding:130px 6vw 70px;position:relative;
+}
+.hero-text .eyebrow{
+  display:inline-flex;align-items:center;gap:10px;font-size:.8rem;letter-spacing:3px;
+  text-transform:uppercase;color:var(--gold-light);margin-bottom:20px;
+  padding:8px 18px;border:1px solid var(--glass-border);border-radius:999px;
+  background:var(--glass);backdrop-filter:blur(6px);
+}
+.hero-text .eyebrow::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--yellow);box-shadow:0 0 10px var(--yellow);animation:blink 2s infinite}
+@keyframes blink{50%{opacity:.3}}
+.hero h1{
+  font-size:clamp(2rem,4.6vw,3.9rem);font-weight:800;line-height:1.15;margin-bottom:18px;
+  background:linear-gradient(120deg,#fff 20%,var(--gold-light) 45%,var(--gold) 60%,#fff 85%);
+  background-size:220% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  animation:heroShine 6s linear infinite;
+  filter:drop-shadow(0 4px 24px rgba(212,175,55,0.25));
+}
+@keyframes heroShine{to{background-position:220% center}}
+.hero .sub{font-size:clamp(1rem,1.6vw,1.25rem);color:#f0dcb0;font-weight:500;margin-bottom:8px}
+.hero .school{font-size:.95rem;color:rgba(255,255,255,0.7);letter-spacing:1px;margin-bottom:34px}
+.hero .school b{color:var(--gold-light)}
+.hero-btns{display:flex;gap:18px;flex-wrap:wrap}
+.hero-visual{position:relative;display:flex;justify-content:center;perspective:1200px}
+.glow-circle{
+  position:absolute;top:50%;left:50%;width:min(30rem,78vw);height:min(30rem,78vw);
+  transform:translate(-50%,-50%);border-radius:50%;z-index:0;
+  background:radial-gradient(circle,rgba(255,214,10,0.35) 0%,rgba(212,175,55,0.18) 40%,transparent 70%);
+  filter:blur(10px);animation:glowPulse 4s ease-in-out infinite;
+}
+@keyframes glowPulse{0%,100%{transform:translate(-50%,-50%) scale(1);opacity:.85}50%{transform:translate(-50%,-50%) scale(1.12);opacity:1}}
+.glow-ring{
+  position:absolute;top:50%;left:50%;width:min(27rem,72vw);height:min(27rem,72vw);
+  transform:translate(-50%,-50%);border-radius:50%;z-index:0;
+  border:1.5px solid rgba(212,175,55,0.4);box-shadow:0 0 40px rgba(212,175,55,0.35) inset,0 0 40px rgba(212,175,55,0.25);
+  animation:ringSpin 24s linear infinite;
+}
+.glow-ring::before{content:"";position:absolute;top:-5px;left:50%;width:10px;height:10px;border-radius:50%;background:var(--yellow);box-shadow:0 0 16px var(--yellow),0 0 34px var(--gold)}
+@keyframes ringSpin{to{transform:translate(-50%,-50%) rotate(360deg)}}
+.hero-shirt{
+  position:relative;z-index:1;width:min(22rem,70vw);
+  filter:drop-shadow(0 30px 50px rgba(0,0,0,0.55)) drop-shadow(0 0 34px rgba(212,175,55,0.22));
+  animation:floatY 5s ease-in-out infinite;
+  transition:transform .2s ease-out;transform-style:preserve-3d;will-change:transform;
+}
+@keyframes floatY{0%,100%{translate:0 0}50%{translate:0 -20px}}
+.hero-badge{
+  position:absolute;z-index:2;bottom:8%;right:4%;
+  background:rgba(46,7,10,0.75);backdrop-filter:blur(12px);
+  border:1px solid var(--glass-border);border-radius:16px;padding:12px 20px;
+  font-size:.8rem;letter-spacing:1px;color:var(--gold-light);text-align:center;
+  box-shadow:0 8px 30px rgba(0,0,0,0.4),0 0 18px rgba(212,175,55,0.25);
+  animation:floatY 6s ease-in-out infinite reverse;
+}
+.scroll-hint{
+  position:absolute;bottom:26px;left:50%;transform:translateX(-50%);
+  display:flex;flex-direction:column;align-items:center;gap:8px;
+  color:rgba(255,255,255,0.5);font-size:.72rem;letter-spacing:3px;text-transform:uppercase;
+}
+.scroll-hint .line{width:1.5px;height:44px;background:linear-gradient(to bottom,var(--gold),transparent);animation:scrollLine 1.8s ease-in-out infinite;transform-origin:top}
+@keyframes scrollLine{0%{transform:scaleY(0)}50%{transform:scaleY(1)}100%{transform:scaleY(0);transform-origin:bottom}}
+
+/* ============ SECTIONS ============ */
+section{padding:96px 6vw;position:relative}
+.section-head{text-align:center;max-width:720px;margin:0 auto 56px}
+.section-head .tag{
+  display:inline-block;font-size:.75rem;letter-spacing:4px;text-transform:uppercase;
+  color:var(--maroon);background:var(--gold-metallic);padding:7px 22px;border-radius:999px;
+  font-weight:700;margin-bottom:18px;box-shadow:0 4px 16px rgba(212,175,55,0.35);
+}
+.section-head h2{font-size:clamp(1.7rem,3.4vw,2.6rem);font-weight:700;color:#fff;position:relative;display:inline-block;padding-bottom:16px}
+.section-head h2::after{
+  content:"";position:absolute;bottom:0;left:50%;transform:translateX(-50%);
+  width:80px;height:3px;border-radius:3px;background:var(--gold-metallic);
+  box-shadow:0 0 14px rgba(212,175,55,0.7);
+}
+.section-head p{color:rgba(255,255,255,0.72);margin-top:18px;font-size:1rem}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(40px);transition:opacity .9s cubic-bezier(.22,1,.36,1),transform .9s cubic-bezier(.22,1,.36,1)}
+.reveal.in{opacity:1;transform:none}
+.reveal.d1{transition-delay:.12s}.reveal.d2{transition-delay:.24s}.reveal.d3{transition-delay:.36s}.reveal.d4{transition-delay:.48s}
+
+/* ============ PRODUCT / FLIP ============ */
+.product-wrap{display:grid;grid-template-columns:1.1fr 1fr;gap:60px;align-items:center;max-width:1180px;margin:0 auto}
+.flip-stage{perspective:1600px;display:flex;justify-content:center}
+.flip-card{
+  position:relative;width:min(26rem,84vw);aspect-ratio:1195/1536;
+  transform-style:preserve-3d;transition:transform .9s cubic-bezier(.4,.1,.2,1);
+  cursor:pointer;
+}
+.flip-card.flipped{transform:rotateY(180deg) scale(1.04)}
+.flip-face{
+  position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;
+  border-radius:24px;overflow:hidden;
+  border:1px solid var(--glass-border);
+  box-shadow:0 30px 60px rgba(0,0,0,0.5),0 0 40px rgba(212,175,55,0.18);
+  transition:box-shadow .5s;
+}
+.flip-card:hover .flip-face{box-shadow:0 34px 70px rgba(0,0,0,0.55),0 0 60px rgba(212,175,55,0.35)}
+.flip-face img{width:100%;height:100%;object-fit:cover}
+.flip-face.back{transform:rotateY(180deg)}
+.flip-hint{position:absolute;bottom:14px;left:50%;transform:translateX(-50%);z-index:3;
+  background:rgba(46,7,10,0.8);backdrop-filter:blur(8px);border:1px solid var(--glass-border);
+  color:var(--gold-light);font-size:.72rem;letter-spacing:2px;padding:6px 16px;border-radius:999px;white-space:nowrap}
+.toggle-pill{
+  display:flex;gap:6px;background:var(--glass);border:1px solid var(--glass-border);
+  border-radius:999px;padding:6px;backdrop-filter:blur(10px);margin:0 auto 34px;width:max-content;
+}
+.toggle-pill button{
+  border:none;background:transparent;color:#f6e9c9;font-family:'Poppins',sans-serif;
+  font-weight:600;font-size:.9rem;letter-spacing:1px;padding:10px 30px;border-radius:999px;
+  cursor:pointer;transition:.35s;
+}
+.toggle-pill button.active{background:var(--gold-metallic);color:var(--maroon-deep);box-shadow:0 0 18px rgba(212,175,55,0.55)}
+.product-info h3{font-size:1.5rem;color:var(--gold-light);margin-bottom:6px}
+.product-info .price{font-family:'Cinzel',serif;font-size:2.2rem;font-weight:800;margin-bottom:22px;
+  background:var(--gold-metallic);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.spec-list{list-style:none;display:flex;flex-direction:column;gap:14px;margin-bottom:30px}
+.spec-list li{
+  display:flex;align-items:center;gap:14px;background:var(--glass);border:1px solid rgba(255,255,255,0.09);
+  border-radius:14px;padding:13px 18px;font-size:.92rem;color:rgba(255,255,255,0.88);
+  transition:transform .3s,border-color .3s,box-shadow .3s;
+}
+.spec-list li:hover{transform:translateX(8px);border-color:var(--glass-border);box-shadow:0 0 18px rgba(212,175,55,0.2)}
+.spec-list li::before{content:"✦";color:var(--yellow);font-size:1rem;text-shadow:0 0 10px var(--yellow)}
+.mini-views{display:flex;gap:16px;margin-bottom:34px}
+.mini-views figure{
+  flex:1;border-radius:16px;overflow:hidden;border:1.5px solid rgba(255,255,255,0.12);
+  transition:transform .35s,border-color .35s,box-shadow .35s;cursor:pointer;background:#000;
+}
+.mini-views figure:hover,.mini-views figure.active{transform:translateY(-6px);border-color:var(--gold);box-shadow:0 12px 28px rgba(0,0,0,0.4),0 0 22px rgba(212,175,55,0.4)}
+.mini-views img{aspect-ratio:1/1.15;object-fit:cover;object-position:top}
+.mini-views figcaption{font-size:.72rem;text-align:center;padding:7px;background:rgba(46,7,10,0.9);color:var(--gold-light);letter-spacing:1.5px}
+
+/* ============ STEPS ============ */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;max-width:1180px;margin:0 auto}
+.step-card{
+  position:relative;background:var(--glass);border:1px solid var(--glass-border);
+  border-radius:20px;padding:36px 24px 30px;text-align:center;backdrop-filter:blur(12px);
+  transition:transform .4s cubic-bezier(.34,1.56,.64,1),box-shadow .4s;
+  overflow:hidden;
+}
+.step-card::before{
+  content:"";position:absolute;top:0;left:0;right:0;height:3px;
+  background:var(--gold-metallic);opacity:.7;
+}
+.step-card:hover{transform:translateY(-10px);box-shadow:0 24px 48px rgba(0,0,0,0.45),0 0 30px rgba(212,175,55,0.28)}
+.step-num{
+  width:58px;height:58px;margin:0 auto 18px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  font-family:'Cinzel',serif;font-size:1.4rem;font-weight:800;color:var(--maroon-deep);
+  background:var(--gold-metallic);box-shadow:0 0 22px rgba(212,175,55,0.55);
+}
+.step-card h4{font-family:'Cinzel',serif;font-size:1.05rem;color:#fff;margin-bottom:10px}
+.step-card p{font-size:.87rem;color:rgba(255,255,255,0.7)}
+
+/* ============ ORDER / FORM ============ */
+.order-shell{max-width:980px;margin:0 auto}
+.form-frame{
+  border-radius:26px;overflow:hidden;border:1px solid var(--glass-border);
+  box-shadow:0 30px 70px rgba(0,0,0,0.5),0 0 50px rgba(212,175,55,0.15);
+  background:#fff;position:relative;
+}
+.form-frame iframe{width:100%;height:640px;border:0;display:block}
+.form-loading{display:flex;align-items:center;justify-content:center;height:640px;flex-direction:column;gap:16px;color:var(--maroon)}
+.spinner{width:46px;height:46px;border-radius:50%;border:4px solid rgba(107,15,26,0.15);border-top-color:var(--maroon);animation:spin 1s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.fallback-card{
+  margin-top:26px;text-align:center;background:var(--glass);border:1px dashed var(--glass-border);
+  border-radius:20px;padding:30px;backdrop-filter:blur(10px);
+}
+.fallback-card p{color:rgba(255,255,255,0.75);font-size:.92rem;margin-bottom:18px}
+
+/* ============ FEATURES ============ */
+.features{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;max-width:1180px;margin:0 auto}
+.feature-card{
+  background:var(--glass);border:1px solid rgba(255,255,255,0.09);border-radius:20px;
+  padding:38px 24px;text-align:center;backdrop-filter:blur(12px);
+  transition:transform .4s cubic-bezier(.34,1.56,.64,1),box-shadow .4s,border-color .4s;
+}
+.feature-card:hover{transform:translateY(-12px) scale(1.02);border-color:var(--glass-border);box-shadow:0 26px 50px rgba(0,0,0,0.45),0 0 34px rgba(212,175,55,0.25)}
+.feature-icon{
+  width:72px;height:72px;margin:0 auto 20px;border-radius:20px;
+  display:flex;align-items:center;justify-content:center;font-size:2rem;
+  background:linear-gradient(135deg,rgba(212,175,55,0.22),rgba(255,214,10,0.1));
+  border:1px solid var(--glass-border);box-shadow:0 0 22px rgba(212,175,55,0.28) inset;
+  animation:iconFloat 4s ease-in-out infinite;
+}
+.feature-card:nth-child(2) .feature-icon{animation-delay:-1s}
+.feature-card:nth-child(3) .feature-icon{animation-delay:-2s}
+.feature-card:nth-child(4) .feature-icon{animation-delay:-3s}
+@keyframes iconFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.feature-card h4{font-family:'Cinzel',serif;font-size:1.08rem;color:var(--gold-light);margin-bottom:10px}
+.feature-card p{font-size:.88rem;color:rgba(255,255,255,0.72)}
+
+/* ============ FOOTER ============ */
+footer{
+  position:relative;margin-top:40px;padding:60px 6vw 34px;text-align:center;
+  background:linear-gradient(180deg,rgba(24,4,6,0.4),#1e0406);
+}
+footer::before{
+  content:"";position:absolute;top:0;left:10%;right:10%;height:2px;
+  background:linear-gradient(90deg,transparent,var(--gold),var(--yellow),var(--gold),transparent);
+  box-shadow:0 0 24px rgba(212,175,55,0.8),0 0 60px rgba(255,214,10,0.4);
+  animation:footerGlow 3s ease-in-out infinite;
+}
+@keyframes footerGlow{50%{box-shadow:0 0 40px rgba(255,214,10,0.95),0 0 90px rgba(255,214,10,0.5)}}
+footer img{width:64px;height:64px;border-radius:50%;border:2px solid var(--gold);margin:0 auto 18px;box-shadow:0 0 20px rgba(212,175,55,0.5)}
+footer h3{font-size:1.15rem;letter-spacing:1px;color:var(--gold-light);margin-bottom:8px}
+footer p{color:rgba(255,255,255,0.6);font-size:.88rem;margin-bottom:6px}
+footer .fine{margin-top:26px;font-size:.75rem;color:rgba(255,255,255,0.35);letter-spacing:1px}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width:1024px){
+  .steps,.features{grid-template-columns:repeat(2,1fr)}
+  .hero{grid-template-columns:1fr;text-align:center;padding-top:120px;gap:24px}
+  .hero-btns{justify-content:center}
+  .hero-text .eyebrow{margin-top:10px}
+  .product-wrap{grid-template-columns:1fr;gap:44px}
+}
+@media (max-width:680px){
+  .nav-links{display:none}
+  .hamburger{display:flex}
+  section{padding:70px 5vw}
+  .steps,.features{grid-template-columns:1fr}
+  .btn{width:100%;max-width:340px}
+  .hero-btns{flex-direction:column;align-items:center}
+  .form-frame iframe{height:560px}
+  .hero-badge{right:0;bottom:2%}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.2s !important}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<div class="bg-scene"></div>
+<canvas id="particles"></canvas>
+<div class="light-beam beam1"></div>
+<div class="light-beam beam2"></div>
+<div class="light-beam beam3"></div>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <a href="#home" class="brand">
+    <img src="front.png" alt="M.K.V School Crest">
+    <span class="brand-name">M.K.V. T-SHIRT</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#tshirt">T-Shirt</a></li>
+    <li><a href="#order">Order</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a class="nav-cta" href="https://docs.google.com/forms/d/e/1FAIpQLSeQzfRkcUHeUB-r3s5dv0RHrtxWyAu5gYcsP_6PBzYT8Tycbg/viewform?usp=publish-editor" target="_blank" rel="noopener">ORDER NOW</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#home">Home</a>
+  <a href="#tshirt">T-Shirt</a>
+  <a href="#order">Order</a>
+  <a href="#contact">Contact</a>
+  <a href="https://docs.google.com/forms/d/e/1FAIpQLSeQzfRkcUHeUB-r3s5dv0RHrtxWyAu5gYcsP_6PBzYT8Tycbg/viewform?usp=publish-editor" target="_blank" rel="noopener" style="color:var(--yellow)">ORDER NOW ✦</a>
+</div>
+
+<!-- HERO -->
+<header class="hero" id="home">
+  <div class="hero-text reveal">
+    <span class="eyebrow">Official Merchandise</span>
+    <h1>MUDUGAMUWA K.V. SCHOOL T-SHIRT</h1>
+    <p class="sub">Official School T-Shirt Ordering Portal</p>
+    <p class="school"><b>KG/DEHI/MUDUGAMUWA K.V.</b> – Ruwanwalla</p>
+    <div class="hero-btns">
+      <a class="btn btn-gold" href="https://docs.google.com/forms/d/e/1FAIpQLSeQzfRkcUHeUB-r3s5dv0RHrtxWyAu5gYcsP_6PBzYT8Tycbg/viewform?usp=publish-editor" target="_blank" rel="noopener">ORDER YOUR T-SHIRT</a>
+      <a class="btn btn-ghost" href="#tshirt">VIEW T-SHIRT</a>
+    </div>
+  </div>
+  <div class="hero-visual reveal d2">
+    <div class="glow-circle"></div>
+    <div class="glow-ring"></div>
+    <img src="front.png" alt="M.K.V Official School T-Shirt – Front View" class="hero-shirt" id="heroShirt">
+    <div class="hero-badge">✦ 2026 OFFICIAL DESIGN ✦</div>
+  </div>
+  <div class="scroll-hint"><span>Scroll</span><div class="line"></div></div>
+</header>
+
+<!-- PRODUCT -->
+<section id="tshirt">
+  <div class="section-head reveal">
+    <span class="tag">The Product</span>
+    <h2>Official M.K.V T-Shirt</h2>
+    <p>Premium white school T-shirt with maroon &amp; golden sleeve stripes, school crest on the chest, and the school name printed on the back.</p>
+  </div>
+
+  <div class="toggle-pill reveal" role="tablist" aria-label="T-shirt view selector">
+    <button class="active" id="btnFront" role="tab" aria-selected="true">FRONT VIEW</button>
+    <button id="btnBack" role="tab" aria-selected="false">BACK VIEW</button>
+  </div>
+
+  <div class="product-wrap">
+    <div class="flip-stage reveal">
+      <div class="flip-card" id="flipCard" tabindex="0" aria-label="T-shirt front and back preview. Click to flip.">
+        <div class="flip-face front">
+          <img src="front.png" alt="Front view – M.K.V school T-shirt with crest and sleeve stripes">
+          <span class="flip-hint">TAP TO FLIP ⟳</span>
+        </div>
+        <div class="flip-face back">
+          <img src="back.png" alt="Back view – KG/DEHI/MUDUGAMUWA K.V Ruwanwalla printed T-shirt">
+          <span class="flip-hint">TAP TO FLIP ⟳</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-info reveal d1">
+      <h3>M.K.V Official School Tee</h3>
+      <div class="price">Order Online Today</div>
+      <ul class="spec-list">
+        <li>Premium white breathable fabric</li>
+        <li>Signature maroon + golden sleeve stripes</li>
+        <li>Embroidered-look school crest on chest with “M.K.V”</li>
+        <li>Back print: “KG/DEHI/MUDUGAMUWA .K.V – Ruwanwalla”</li>
+        <li>Official school-approved design — unchanged &amp; authentic</li>
+      </ul>
+      <div class="mini-views">
+        <figure id="miniFront" class="active">
+          <img src="front.png" alt="Front view thumbnail">
+          <figcaption>FRONT</figcaption>
+        </figure>
+        <figure id="miniBack">
+          <img src="back.png" alt="Back view thumbnail">
+          <figcaption>BACK</figcaption>
+        </figure>
+      </div>
+      <a class="btn btn-gold" href="#order">ORDER NOW</a>
+    </div>
+  </div>
+</section>
+
+<!-- STEPS -->
+<section id="how">
+  <div class="section-head reveal">
+    <span class="tag">How It Works</span>
+    <h2>Order In 4 Easy Steps</h2>
+  </div>
+  <div class="steps">
+    <div class="step-card reveal">
+      <div class="step-num">1</div>
+      <h4>Select Details</h4>
+      <p>Choose your required T-shirt size, quantity and student details.</p>
+    </div>
+    <div class="step-card reveal d1">
+      <div class="step-num">2</div>
+      <h4>Fill The Form</h4>
+      <p>Complete the official Google Order Form below in a few minutes.</p>
+    </div>
+    <div class="step-card reveal d2">
+      <div class="step-num">3</div>
+      <h4>Submit Order</h4>
+      <p>Review your details and submit the form to place your order.</p>
+    </div>
+    <div class="step-card reveal d3">
+      <div class="step-num">4</div>
+      <h4>Confirmation</h4>
+      <p>Wait for order confirmation from the school with collection details.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ORDER -->
+<section id="order">
+  <div class="section-head reveal">
+    <span class="tag">Place Your Order</span>
+    <h2>Order Your T-Shirt</h2>
+    <p>Fill in the official order form below — it works right here on this page. Prefer a new tab? Use the button.</p>
+  </div>
+
+  <div class="order-shell reveal">
+    <div style="text-align:center;margin-bottom:30px">
+      <a class="btn btn-gold" href="https://docs.google.com/forms/d/e/1FAIpQLSeQzfRkcUHeUB-r3s5dv0RHrtxWyAu5gYcsP_6PBzYT8Tycbg/viewform?usp=publish-editor" target="_blank" rel="noopener">ORDER NOW ✦ OPEN ORDER FORM</a>
+    </div>
+
+    <div class="form-frame">
+      <div class="form-loading" id="formLoading">
+        <div class="spinner"></div>
+        <p>Loading order form…</p>
+      </div>
+      <iframe id="orderFrame"
+        title="M.K.V T-Shirt Order Form"
+        src="https://docs.google.com/forms/d/e/1FAIpQLSeQzfRkcUHeUB-r3s5dv0RHrtxWyAu5gYcsP_6PBzYT8Tycbg/viewform?embedded=true"
+        loading="lazy"
+        referrerpolicy="no-referrer"
+        allow="fullscreen"
+        style="position:relative;z-index:1"></iframe>
+    </div>
+
+    <div class="fallback-card reveal" id="fallbackCard">
+      <p>Form not loading or blocked by your browser? No problem — open the order form in a new tab.</p>
+      <a class="btn btn-ghost" href="https://docs.google.com/forms/d/e/1FAIpQLSeQzfRkcUHeUB-r3s5dv0RHrtxWyAu5gYcsP_6PBzYT8Tycbg/viewform?usp=publish-editor" target="_blank" rel="noopener">OPEN ORDER FORM ↗</a>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section id="features">
+  <div class="section-head reveal">
+    <span class="tag">Why This Tee</span>
+    <h2>Made For M.K.V Students</h2>
+  </div>
+  <div class="features">
+    <div class="feature-card reveal">
+      <div class="feature-icon">🏅</div>
+      <h4>Official School Design</h4>
+      <p>The exact approved design with the authentic school crest — nothing changed.</p>
+    </div>
+    <div class="feature-card reveal d1">
+      <div class="feature-icon">🧵</div>
+      <h4>Comfortable Fabric</h4>
+      <p>Soft, breathable and durable fabric made for all-day school wear.</p>
+    </div>
+    <div class="feature-card reveal d2">
+      <div class="feature-icon">👕</div>
+      <h4>Front &amp; Back Design</h4>
+      <p>Crest and “M.K.V” on the front, full school name proudly on the back.</p>
+    </div>
+    <div class="feature-card reveal d3">
+      <div class="feature-icon">📱</div>
+      <h4>Easy Online Ordering</h4>
+      <p>Order in minutes from your phone — simple form, fast confirmation.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="contact">
+  <img src="front.png" alt="M.K.V crest">
+  <h3 class="serif">KG/DEHI/MUDUGAMUWA K.V. – Ruwanwalla</h3>
+  <p>Official School T-Shirt Ordering Portal</p>
+  <p>Questions about your order? Contact your class teacher or the school office.</p>
+  <p class="fine">© 2026 KG/DEHI/MUDUGAMUWA K.V. · Official T-Shirt Portal · All Rights Reserved</p>
+</footer>
+
+<script>
+/* ---------- Sticky glass navbar ---------- */
+const navbar = document.getElementById('navbar');
+addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', scrollY > 40);
+}, {passive:true});
+
+/* ---------- Mobile menu ---------- */
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+hamburger.addEventListener('click', () => {
+  const open = mobileMenu.classList.toggle('open');
+  hamburger.classList.toggle('open', open);
+  document.body.style.overflow = open ? 'hidden' : '';
+});
+mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+  mobileMenu.classList.remove('open');
+  hamburger.classList.remove('open');
+  document.body.style.overflow = '';
+}));
+
+/* ---------- Scroll reveal ---------- */
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+}, {threshold:.15});
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+/* ---------- Hero 3D tilt ---------- */
+const heroShirt = document.getElementById('heroShirt');
+const fine = matchMedia('(pointer:fine)').matches;
+if (fine && heroShirt) {
+  heroShirt.parentElement.addEventListener('mousemove', e => {
+    const r = heroShirt.getBoundingClientRect();
+    const x = (e.clientX - r.left - r.width/2) / r.width;
+    const y = (e.clientY - r.top - r.height/2) / r.height;
+    heroShirt.style.transform = `rotateY(${x*18}deg) rotateX(${-y*14}deg)`;
+  });
+  heroShirt.parentElement.addEventListener('mouseleave', () => heroShirt.style.transform = '');
+}
+
+/* ---------- Front / Back flip toggle ---------- */
+const flipCard = document.getElementById('flipCard');
+const btnFront = document.getElementById('btnFront');
+const btnBack  = document.getElementById('btnBack');
+const miniFront = document.getElementById('miniFront');
+const miniBack  = document.getElementById('miniBack');
+function setView(back) {
+  flipCard.classList.toggle('flipped', back);
+  btnFront.classList.toggle('active', !back);
+  btnBack.classList.toggle('active', back);
+  btnFront.setAttribute('aria-selected', String(!back));
+  btnBack.setAttribute('aria-selected', String(back));
+  miniFront.classList.toggle('active', !back);
+  miniBack.classList.toggle('active', back);
+}
+btnFront.addEventListener('click', () => setView(false));
+btnBack.addEventListener('click', () => setView(true));
+miniFront.addEventListener('click', () => setView(false));
+miniBack.addEventListener('click', () => setView(true));
+flipCard.addEventListener('click', () => setView(!flipCard.classList.contains('flipped')));
+flipCard.addEventListener('keydown', e => {
+  if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setView(!flipCard.classList.contains('flipped')); }
+});
+
+/* ---------- Ripple on buttons ---------- */
+document.querySelectorAll('.btn').forEach(btn => {
+  btn.addEventListener('click', function(e) {
+    const r = this.getBoundingClientRect();
+    const d = Math.max(r.width, r.height);
+    const s = document.createElement('span');
+    s.className = 'ripple';
+    s.style.cssText = `width:${d}px;height:${d}px;left:${e.clientX-r.left-d/2}px;top:${e.clientY-r.top-d/2}px`;
+    this.appendChild(s);
+    setTimeout(() => s.remove(), 650);
+  });
+});
+
+/* ---------- Google Form iframe loading ---------- */
+const orderFrame = document.getElementById('orderFrame');
+const formLoading = document.getElementById('formLoading');
+orderFrame.addEventListener('load', () => { formLoading.style.display = 'none'; });
+orderFrame.addEventListener('error', showFallback);
+// If Google blocks embedding (X-Frame-Options), the frame stays blank —
+// after 12s show the fallback card prominently.
+setTimeout(() => {
+  try {
+    const doc = orderFrame.contentDocument;
+    if (!doc || !doc.body || doc.body.children.length === 0) showFallback();
+  } catch (_) { /* cross-origin = likely loaded fine */ }
+}, 12000);
+function showFallback() {
+  document.getElementById('fallbackCard').scrollIntoView({behavior:'smooth', block:'center'});
+}
+
+/* ---------- Floating golden particles ---------- */
+const canvas = document.getElementById('particles');
+const ctx = canvas.getContext('2d');
+let W, H, parts = [];
+const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+function resize() {
+  W = canvas.width = innerWidth;
+  H = canvas.height = innerHeight;
+  const n = Math.min(70, Math.floor(W * H / 26000));
+  parts = Array.from({length:n}, () => ({
+    x: Math.random()*W, y: Math.random()*H,
+    r: Math.random()*2.2 + .6,
+    vy: -(Math.random()*.35 + .12),
+    vx: (Math.random()-.5)*.18,
+    a: Math.random()*.5 + .15,
+    tw: Math.random()*Math.PI*2
+  }));
+}
+resize();
+addEventListener('resize', resize);
+let pmx = 0, pmy = 0;
+addEventListener('mousemove', e => { pmx = (e.clientX/W - .5); pmy = (e.clientY/H - .5); }, {passive:true});
+function tick() {
+  ctx.clearRect(0,0,W,H);
+  for (const p of parts) {
+    p.y += p.vy; p.x += p.vx; p.tw += .03;
+    if (p.y < -10) { p.y = H + 10; p.x = Math.random()*W; }
+    if (p.x < -10) p.x = W + 10; else if (p.x > W + 10) p.x = -10;
+    const alpha = p.a * (0.6 + 0.4*Math.sin(p.tw));
+    ctx.beginPath();
+    ctx.arc(p.x + pmx*18*p.r, p.y + pmy*12*p.r, p.r, 0, 7);
+    ctx.fillStyle = `rgba(255,214,10,${alpha})`;
+    ctx.shadowColor = 'rgba(212,175,55,.9)';
+    ctx.shadowBlur = 8;
+    ctx.fill();
+    ctx.shadowBlur = 0;
+  }
+  requestAnimationFrame(tick);
+}
+if (!reduced) tick();
+</script>
+</body>
+</html>
