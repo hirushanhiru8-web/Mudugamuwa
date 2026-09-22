@@ -7,8 +7,8 @@
 <meta name="description" content="Official school T-shirt ordering portal for KG/DEHI/MUDUGAMUWA K.V. – Ruwanwalla. Order the official M.K.V school T-shirt online.">
 <meta property="og:title" content="MUDUGAMUWA K.V. School T-Shirt Ordering Portal">
 <meta property="og:description" content="Order the official M.K.V school T-shirt. KG/DEHI/MUDUGAMUWA K.V. – Ruwanwalla.">
-<meta property="og:image" content="front.png">
-<link rel="icon" href="front.png">
+<meta property="og:image" content="images/white-front.png">
+<link rel="icon" href="images/white-front.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -27,7 +27,7 @@
   --glass-border:rgba(212,175,55,0.35);
 }
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-html{scroll-behavior:smooth;overflow-x:hidden;overflow-y:auto}
+html{scroll-behavior:smooth}
 body{
   font-family:'Poppins',sans-serif;
   color:#fff;
@@ -64,15 +64,7 @@ h1,h2,h3,.serif{font-family:'Cinzel',serif}
 .beam3{left:90%;animation-delay:-11s;animation-duration:22s}
 @keyframes beamMove{0%{transform:rotate(18deg) translateX(-20vw)}50%{transform:rotate(18deg) translateX(20vw)}100%{transform:rotate(18deg) translateX(-20vw)}}
 
-/* ============ SCROLL FIX ============ */
-html, body{width:100%;min-height:100%;overflow-x:hidden}
-body.menu-open{overflow:hidden}
-.bg-scene,.light-beam,#particles{pointer-events:none}
-.mobile-menu{-webkit-overflow-scrolling:touch;touch-action:pan-y}
-section,header,footer{scroll-margin-top:82px}
-
 /* ============ NAVBAR ============ */
-
 .navbar{
   position:fixed;top:0;left:0;right:0;z-index:100;
   display:flex;align-items:center;justify-content:space-between;
@@ -112,7 +104,6 @@ section,header,footer{scroll-margin-top:82px}
   position:fixed;inset:0;z-index:101;
   background:rgba(35,5,8,0.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
   display:flex;flex-direction:column;align-items:center;justify-content:center;gap:34px;
-  overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;
   opacity:0;pointer-events:none;transition:opacity .4s ease;
 }
 .mobile-menu.open{opacity:1;pointer-events:auto}
@@ -180,29 +171,61 @@ section,header,footer{scroll-margin-top:82px}
 .hero .school{font-size:.95rem;color:rgba(255,255,255,0.7);letter-spacing:1px;margin-bottom:34px}
 .hero .school b{color:var(--gold-light)}
 .hero-btns{display:flex;gap:18px;flex-wrap:wrap}
-.hero-visual{position:relative;display:flex;justify-content:center;perspective:1200px}
+.hero-visual{position:relative;display:flex;justify-content:center;align-items:center;perspective:1400px;min-height:520px;overflow:visible}
 .glow-circle{
-  position:absolute;top:50%;left:50%;width:min(30rem,78vw);height:min(30rem,78vw);
+  position:absolute;top:50%;left:50%;width:min(32rem,82vw);height:min(32rem,82vw);
   transform:translate(-50%,-50%);border-radius:50%;z-index:0;
-  background:radial-gradient(circle,rgba(255,214,10,0.35) 0%,rgba(212,175,55,0.18) 40%,transparent 70%);
+  background:radial-gradient(circle,rgba(255,214,10,0.38) 0%,rgba(212,175,55,0.20) 42%,transparent 72%);
   filter:blur(10px);animation:glowPulse 4s ease-in-out infinite;
 }
 @keyframes glowPulse{0%,100%{transform:translate(-50%,-50%) scale(1);opacity:.85}50%{transform:translate(-50%,-50%) scale(1.12);opacity:1}}
 .glow-ring{
-  position:absolute;top:50%;left:50%;width:min(27rem,72vw);height:min(27rem,72vw);
+  position:absolute;top:50%;left:50%;width:min(29rem,76vw);height:min(29rem,76vw);
   transform:translate(-50%,-50%);border-radius:50%;z-index:0;
-  border:1.5px solid rgba(212,175,55,0.4);box-shadow:0 0 40px rgba(212,175,55,0.35) inset,0 0 40px rgba(212,175,55,0.25);
-  animation:ringSpin 24s linear infinite;
+  border:1.5px solid rgba(212,175,55,0.48);box-shadow:0 0 40px rgba(212,175,55,0.35) inset,0 0 40px rgba(212,175,55,0.25);
+  animation:ringSpin 24s linear infinite;pointer-events:none;
 }
 .glow-ring::before{content:"";position:absolute;top:-5px;left:50%;width:10px;height:10px;border-radius:50%;background:var(--yellow);box-shadow:0 0 16px var(--yellow),0 0 34px var(--gold)}
 @keyframes ringSpin{to{transform:translate(-50%,-50%) rotate(360deg)}}
-.hero-shirt{
-  position:relative;z-index:1;width:min(22rem,70vw);
-  filter:drop-shadow(0 30px 50px rgba(0,0,0,0.55)) drop-shadow(0 0 34px rgba(212,175,55,0.22));
-  animation:floatY 5s ease-in-out infinite;
-  transition:transform .2s ease-out;transform-style:preserve-3d;will-change:transform;
+.shirt-orbit{
+  position:relative;z-index:2;width:min(25rem,76vw);height:min(32rem,78vw);
+  display:flex;align-items:center;justify-content:center;
+  touch-action:none;cursor:grab;user-select:none;-webkit-user-select:none;
+  transform-style:preserve-3d;
 }
-@keyframes floatY{0%,100%{translate:0 0}50%{translate:0 -20px}}
+.shirt-orbit.dragging{cursor:grabbing}
+.orbit-track{
+  position:relative;width:78%;height:88%;
+  transform-style:preserve-3d;
+  will-change:transform;
+  transition:transform .08s linear;
+}
+.orbit-face{
+  position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  backface-visibility:hidden;-webkit-backface-visibility:hidden;
+  transform-style:preserve-3d;
+}
+.orbit-face img{width:100%;height:100%;object-fit:contain;pointer-events:none;
+  filter:drop-shadow(0 30px 40px rgba(0,0,0,.58)) drop-shadow(0 0 28px rgba(212,175,55,.22));
+}
+.face-front{transform:rotateY(0deg) translateZ(1px)}
+.face-right{transform:rotateY(90deg) translateZ(1px)}
+.face-back{transform:rotateY(180deg) translateZ(1px)}
+.face-left{transform:rotateY(270deg) translateZ(1px)}
+.orbit-label{
+  position:absolute;bottom:2%;left:50%;transform:translateX(-50%);z-index:5;
+  padding:8px 16px;border-radius:999px;white-space:nowrap;
+  background:rgba(46,7,10,.78);backdrop-filter:blur(10px);
+  border:1px solid var(--glass-border);color:var(--gold-light);
+  font-size:.68rem;letter-spacing:1.5px;box-shadow:0 0 18px rgba(212,175,55,.22);
+  pointer-events:none;
+}
+@media (max-width:680px){
+  .hero-visual{min-height:430px}
+  .shirt-orbit{width:90vw;height:110vw;max-height:500px}
+  .orbit-track{width:82%;height:88%}
+  .orbit-label{font-size:.58rem;bottom:0}
+}
 .hero-badge{
   position:absolute;z-index:2;bottom:8%;right:4%;
   background:rgba(46,7,10,0.75);backdrop-filter:blur(12px);
@@ -240,37 +263,19 @@ section{padding:96px 6vw;position:relative}
 .reveal.in{opacity:1;transform:none}
 .reveal.d1{transition-delay:.12s}.reveal.d2{transition-delay:.24s}.reveal.d3{transition-delay:.36s}.reveal.d4{transition-delay:.48s}
 
-/* ============ T-SHIRT COLOUR SELECTOR ============ */
-.color-selector{
-  display:flex;justify-content:center;gap:10px;
-  background:var(--glass);border:1px solid var(--glass-border);
-  border-radius:999px;padding:7px;width:max-content;margin:0 auto 22px;
-  backdrop-filter:blur(12px);
+
+.color-pill{
+  display:flex;gap:6px;background:var(--glass);border:1px solid var(--glass-border);
+  border-radius:999px;padding:6px;backdrop-filter:blur(10px);margin:0 auto 18px;width:max-content;
 }
-.color-option{
-  border:1px solid transparent;background:transparent;color:#f6e9c9;
-  font-family:'Poppins',sans-serif;font-weight:700;font-size:.82rem;
-  letter-spacing:.8px;padding:11px 20px;border-radius:999px;
-  cursor:pointer;transition:.35s;display:flex;align-items:center;gap:9px;
+.color-pill button{
+  border:none;background:transparent;color:#f6e9c9;font-family:'Poppins',sans-serif;
+  font-weight:600;font-size:.9rem;letter-spacing:1px;padding:10px 26px;border-radius:999px;
+  cursor:pointer;transition:.35s;
 }
-.color-option:hover{border-color:var(--glass-border);transform:translateY(-2px)}
-.color-option.active{
-  background:var(--gold-metallic);color:var(--maroon-deep);
-  box-shadow:0 0 22px rgba(212,175,55,.45);
-}
-.color-dot{
-  width:14px;height:14px;border-radius:50%;display:inline-block;
-  border:1px solid rgba(255,255,255,.55);box-shadow:0 0 8px rgba(255,255,255,.15);
-}
-.white-dot{background:#fff}
-.black-dot{background:#090909}
-@media(max-width:680px){
-  .color-selector{width:100%;max-width:360px}
-  .color-option{flex:1;justify-content:center;padding:11px 10px;font-size:.72rem}
-}
+.color-pill button.active{background:var(--gold-metallic);color:var(--maroon-deep);box-shadow:0 0 18px rgba(212,175,55,0.55)}
 
 /* ============ PRODUCT / FLIP ============ */
-
 .product-wrap{display:grid;grid-template-columns:1.1fr 1fr;gap:60px;align-items:center;max-width:1180px;margin:0 auto}
 .flip-stage{perspective:1600px;display:flex;justify-content:center}
 .flip-card{
@@ -279,7 +284,6 @@ section{padding:96px 6vw;position:relative}
   cursor:pointer;
 }
 .flip-card.flipped{transform:rotateY(180deg) scale(1.04)}
-.flip-card{touch-action:manipulation}
 .flip-face{
   position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;
   border-radius:24px;overflow:hidden;
@@ -435,7 +439,7 @@ footer .fine{margin-top:26px;font-size:.75rem;color:rgba(255,255,255,0.35);lette
 <!-- NAVBAR -->
 <nav class="navbar" id="navbar">
   <a href="#home" class="brand">
-    <img src="white-front.png" alt="M.K.V School Crest">
+    <img src="images/white-front.png" alt="M.K.V School Crest">
     <span class="brand-name">M.K.V. T-SHIRT</span>
   </a>
   <ul class="nav-links">
@@ -473,8 +477,16 @@ footer .fine{margin-top:26px;font-size:.75rem;color:rgba(255,255,255,0.35);lette
   <div class="hero-visual reveal d2">
     <div class="glow-circle"></div>
     <div class="glow-ring"></div>
-    <img src="white-front.png" alt="M.K.V Official School T-Shirt – Front View" class="hero-shirt" id="heroShirt">
-    <div class="hero-badge">✦ 2026 OFFICIAL DESIGN ✦</div>
+    <div class="shirt-orbit" id="shirtOrbit" aria-label="Interactive 3D T-shirt viewer">
+      <div class="orbit-track" id="orbitTrack">
+        <div class="orbit-face face-front"><img src="images/white-front.png" alt="White M.K.V T-shirt front"></div>
+        <div class="orbit-face face-right"><img src="images/maroon-front.png" alt="Maroon M.K.V T-shirt front"></div>
+        <div class="orbit-face face-back"><img src="images/white-back.png" alt="White M.K.V T-shirt back"></div>
+        <div class="orbit-face face-left"><img src="images/maroon-back.png" alt="Maroon M.K.V T-shirt back"></div>
+      </div>
+      <div class="orbit-label">↔ DRAG / SWIPE TO ROTATE</div>
+    </div>
+    <div class="hero-badge">✦ 3D OFFICIAL DESIGN ✦</div>
   </div>
   <div class="scroll-hint"><span>Scroll</span><div class="line"></div></div>
 </header>
@@ -484,16 +496,12 @@ footer .fine{margin-top:26px;font-size:.75rem;color:rgba(255,255,255,0.35);lette
   <div class="section-head reveal">
     <span class="tag">The Product</span>
     <h2>Official M.K.V T-Shirt</h2>
-    <p>Choose your preferred school T-shirt colour — White or Black — with the same maroon &amp; golden signature details.</p>
+    <p>Official M.K.V school T-shirt available in White and Maroon, with the school crest on the front and school name printed on the back.</p>
   </div>
 
-  <div class="color-selector reveal" role="tablist" aria-label="T-shirt colour selector">
-    <button class="color-option active" id="whiteOption" role="tab" aria-selected="true">
-      <span class="color-dot white-dot"></span> WHITE T-SHIRT
-    </button>
-    <button class="color-option" id="blackOption" role="tab" aria-selected="false">
-      <span class="color-dot black-dot"></span> BLACK T-SHIRT
-    </button>
+  <div class="color-pill reveal" role="tablist" aria-label="T-shirt color selector">
+    <button class="active" id="btnWhite" role="tab" aria-selected="true">WHITE</button>
+    <button id="btnMaroon" role="tab" aria-selected="false">MAROON</button>
   </div>
 
   <div class="toggle-pill reveal" role="tablist" aria-label="T-shirt view selector">
@@ -505,33 +513,33 @@ footer .fine{margin-top:26px;font-size:.75rem;color:rgba(255,255,255,0.35);lette
     <div class="flip-stage reveal">
       <div class="flip-card" id="flipCard" tabindex="0" aria-label="T-shirt front and back preview. Click to flip.">
         <div class="flip-face front">
-          <img src="white-front.png" alt="Front view – M.K.V school T-shirt with crest and sleeve stripes">
+          <img id="mainFront" src="images/white-front.png" alt="White M.K.V school T-shirt front view">
           <span class="flip-hint">TAP TO FLIP ⟳</span>
         </div>
         <div class="flip-face back">
-          <img src="white-back.png" alt="Back view – KG/DEHI/MUDUGAMUWA K.V Ruwanwalla printed T-shirt">
+          <img id="mainBack" src="images/white-back.png" alt="White M.K.V school T-shirt back view">
           <span class="flip-hint">TAP TO FLIP ⟳</span>
         </div>
       </div>
     </div>
 
     <div class="product-info reveal d1">
-      <h3>M.K.V Official School Tee</h3>
+      <h3 id="productTitle">M.K.V Official White School Tee</h3>
       <div class="price">Order Online Today</div>
       <ul class="spec-list">
         <li>Premium breathable fabric</li>
-        <li>Signature maroon + golden sleeve stripes</li>
-        <li>Embroidered-look school crest on chest with “M.K.V”</li>
-        <li>Back print: “KG/DEHI/MUDUGAMUWA .K.V – Ruwanwalla”</li>
-        <li>Official school-approved design — unchanged &amp; authentic</li>
+        <li>Maroon + golden collar and sleeve stripes</li>
+        <li>School crest and “M.K.V” on the front</li>
+        <li>“KG/DEHI/MUDUGAMUWA.KV” printed on the back</li>
+        <li>Choose between White and Maroon official designs</li>
       </ul>
       <div class="mini-views">
         <figure id="miniFront" class="active">
-          <img src="white-front.png" alt="Front view thumbnail">
+          <img id="miniFrontImg" src="images/white-front.png" alt="White front view thumbnail">
           <figcaption>FRONT</figcaption>
         </figure>
         <figure id="miniBack">
-          <img src="white-back.png" alt="Back view thumbnail">
+          <img id="miniBackImg" src="images/white-back.png" alt="White back view thumbnail">
           <figcaption>BACK</figcaption>
         </figure>
       </div>
@@ -636,7 +644,7 @@ footer .fine{margin-top:26px;font-size:.75rem;color:rgba(255,255,255,0.35);lette
 
 <!-- FOOTER -->
 <footer id="contact">
-  <img src="white-front.png" alt="M.K.V crest">
+  <img src="images/white-front.png" alt="M.K.V crest">
   <h3 class="serif">KG/DEHI/MUDUGAMUWA K.V. – Ruwanwalla</h3>
   <p>Official School T-Shirt Ordering Portal</p>
   <p>Questions about your order? Contact your class teacher or the school office.</p>
@@ -656,12 +664,12 @@ const mobileMenu = document.getElementById('mobileMenu');
 hamburger.addEventListener('click', () => {
   const open = mobileMenu.classList.toggle('open');
   hamburger.classList.toggle('open', open);
-  document.body.classList.toggle('menu-open', open);
+  document.body.style.overflow = open ? 'hidden' : '';
 });
 mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
   mobileMenu.classList.remove('open');
   hamburger.classList.remove('open');
-  document.body.classList.remove('menu-open');
+  document.body.style.overflow = '';
 }));
 
 /* ---------- Scroll reveal ---------- */
@@ -670,65 +678,88 @@ const io = new IntersectionObserver(entries => {
 }, {threshold:.15});
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-/* ---------- Hero 3D tilt ---------- */
-const heroShirt = document.getElementById('heroShirt');
-const fine = matchMedia('(pointer:fine)').matches;
-if (fine && heroShirt) {
-  heroShirt.parentElement.addEventListener('mousemove', e => {
-    const r = heroShirt.getBoundingClientRect();
-    const x = (e.clientX - r.left - r.width/2) / r.width;
-    const y = (e.clientY - r.top - r.height/2) / r.height;
-    heroShirt.style.transform = `rotateY(${x*18}deg) rotateX(${-y*14}deg)`;
-  });
-  heroShirt.parentElement.addEventListener('mouseleave', () => heroShirt.style.transform = '');
+/* ---------- Interactive 3D T-shirt orbit ---------- */
+const shirtOrbit = document.getElementById('shirtOrbit');
+const orbitTrack = document.getElementById('orbitTrack');
+let orbitRotation = 0;
+let dragging = false;
+let startX = 0;
+let startRotation = 0;
+let velocity = 0;
+let lastX = 0;
+let lastTime = 0;
+
+function renderOrbit(){
+  orbitTrack.style.transform = `rotateY(${orbitRotation}deg)`;
 }
+renderOrbit();
 
-/* ---------- T-shirt colour selector ---------- */
-const whiteOption = document.getElementById('whiteOption');
-const blackOption = document.getElementById('blackOption');
-const productImages = {
-  white: {front:'white-front.png', back:'white-back.png'},
-  black: {front:'black-front.png', back:'black-back.png'}
-};
-let selectedColor = 'white';
-
-function setColor(color) {
-  selectedColor = color;
-  const isBlack = color === 'black';
-  whiteOption.classList.toggle('active', !isBlack);
-  blackOption.classList.toggle('active', isBlack);
-  whiteOption.setAttribute('aria-selected', String(!isBlack));
-  blackOption.setAttribute('aria-selected', String(isBlack));
-
-  const frontSrc = productImages[color].front;
-  const backSrc = productImages[color].back;
-
-  document.querySelectorAll('img[alt*="Front view"], img[alt*="Front View"]').forEach(img => {
-    if (img.closest('.mini-views') || img.closest('.flip-face')) img.src = frontSrc;
-  });
-  document.querySelectorAll('img[alt*="Back view"], img[alt*="Back View"]').forEach(img => {
-    if (img.closest('.mini-views') || img.closest('.flip-face')) img.src = backSrc;
-  });
-
-  // Hero image
-  const hero = document.getElementById('heroShirt');
-  if (hero) hero.src = frontSrc;
-
-  // Footer/brand image remains the school crest-style product image area.
-  const productTitle = document.querySelector('.product-info h3');
-  if (productTitle) productTitle.textContent = `M.K.V ${isBlack ? 'Black' : 'White'} School Tee`;
+shirtOrbit.addEventListener('pointerdown', e => {
+  dragging = true;
+  shirtOrbit.classList.add('dragging');
+  startX = e.clientX;
+  lastX = e.clientX;
+  startRotation = orbitRotation;
+  lastTime = performance.now();
+  velocity = 0;
+  shirtOrbit.setPointerCapture?.(e.pointerId);
+});
+shirtOrbit.addEventListener('pointermove', e => {
+  if(!dragging) return;
+  const now = performance.now();
+  const dx = e.clientX - lastX;
+  const dt = Math.max(8, now - lastTime);
+  orbitRotation = startRotation + (e.clientX - startX) * 0.65;
+  velocity = dx / dt * 16;
+  lastX = e.clientX;
+  lastTime = now;
+  renderOrbit();
+});
+function endOrbit(){
+  if(!dragging) return;
+  dragging = false;
+  shirtOrbit.classList.remove('dragging');
+  const inertia = Math.max(-14, Math.min(14, velocity));
+  orbitRotation += inertia * 8;
+  renderOrbit();
 }
+shirtOrbit.addEventListener('pointerup', endOrbit);
+shirtOrbit.addEventListener('pointercancel', endOrbit);
+shirtOrbit.addEventListener('wheel', e => {
+  e.preventDefault();
+  orbitRotation += e.deltaY * 0.28;
+  renderOrbit();
+},{passive:false});
 
-whiteOption.addEventListener('click', () => setColor('white'));
-blackOption.addEventListener('click', () => setColor('black'));
-
-/* ---------- Front / Back flip toggle ---------- */
-
+/* ---------- T-shirt color + front/back selector ---------- */
 const flipCard = document.getElementById('flipCard');
 const btnFront = document.getElementById('btnFront');
 const btnBack  = document.getElementById('btnBack');
+const btnWhite = document.getElementById('btnWhite');
+const btnMaroon = document.getElementById('btnMaroon');
 const miniFront = document.getElementById('miniFront');
-const miniBack  = document.getElementById('miniBack');
+const miniBack = document.getElementById('miniBack');
+const mainFront = document.getElementById('mainFront');
+const mainBack = document.getElementById('mainBack');
+const miniFrontImg = document.getElementById('miniFrontImg');
+const miniBackImg = document.getElementById('miniBackImg');
+const productTitle = document.getElementById('productTitle');
+
+let currentColor = 'white';
+
+const shirtImages = {
+  white: {
+    front: 'images/white-front.png',
+    back: 'images/white-back.png',
+    title: 'M.K.V Official White School Tee'
+  },
+  maroon: {
+    front: 'images/maroon-images/white-front.png',
+    back: 'images/maroon-images/white-back.png',
+    title: 'M.K.V Official Maroon School Tee'
+  }
+};
+
 function setView(back) {
   flipCard.classList.toggle('flipped', back);
   btnFront.classList.toggle('active', !back);
@@ -738,10 +769,32 @@ function setView(back) {
   miniFront.classList.toggle('active', !back);
   miniBack.classList.toggle('active', back);
 }
+
+function setColor(color) {
+  currentColor = color;
+  const shirt = shirtImages[color];
+  mainFront.src = shirt.front;
+  mainBack.src = shirt.back;
+  miniFrontImg.src = shirt.front;
+  miniBackImg.src = shirt.back;
+  miniFrontImg.alt = `${color} front view thumbnail`;
+  miniBackImg.alt = `${color} back view thumbnail`;
+  mainFront.alt = `${color} M.K.V school T-shirt front view`;
+  mainBack.alt = `${color} M.K.V school T-shirt back view`;
+  productTitle.textContent = shirt.title;
+  btnWhite.classList.toggle('active', color === 'white');
+  btnMaroon.classList.toggle('active', color === 'maroon');
+  btnWhite.setAttribute('aria-selected', String(color === 'white'));
+  btnMaroon.setAttribute('aria-selected', String(color === 'maroon'));
+  setView(false);
+}
+
 btnFront.addEventListener('click', () => setView(false));
 btnBack.addEventListener('click', () => setView(true));
 miniFront.addEventListener('click', () => setView(false));
 miniBack.addEventListener('click', () => setView(true));
+btnWhite.addEventListener('click', () => setColor('white'));
+btnMaroon.addEventListener('click', () => setColor('maroon'));
 flipCard.addEventListener('click', () => setView(!flipCard.classList.contains('flipped')));
 flipCard.addEventListener('keydown', e => {
   if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setView(!flipCard.classList.contains('flipped')); }
